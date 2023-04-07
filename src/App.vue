@@ -3,12 +3,13 @@
         <el-menu :default-active="$route.path" mode="horizontal" :router="true">
             <el-sub-menu index="/testRouterView">
                 <template #title>vue-router</template>
-                <el-menu-item index="/testRouterView/testRouterViewPage1">testRouterViewPage1</el-menu-item>
-                <el-menu-item index="/testRouterView/testRouterViewPage2">testRouterViewPage2</el-menu-item>
+                <el-menu-item index="/testRouterView/testRouterViewPage/skyblue">testPage1</el-menu-item>
+                <el-menu-item index="/testRouterView/testRouterViewPage/orangered">testPage2</el-menu-item>
             </el-sub-menu>
         </el-menu>
         <div class="content" :class="{'setOverflowHidden':styleFlag}">
             <my-router-view class="page"
+                            :set-key="true"
                             @before-leave="styleFlag=true"
                             @after-enter="styleFlag=false"
                             transition-name="slide-fade"/>
